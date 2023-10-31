@@ -3,7 +3,8 @@
 	<head>
 		<meta charset="UTF-8" />
 		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
-		
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
 		<title>WebStudio</title>
 		<link rel="preconnect" href="https://fonts.googleapis.com" />
 		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -21,56 +22,131 @@
 		<link rel="stylesheet" href="./css/styles.css" />
 	</head>
 	<body>
-		<header class="page line">
+		<header class="header line">
 			<!-- Nav Section -->
 
-			<div class="container">
-				<nav class="page-nav">
+
+			<div class="header-container container ">
+
+				<div class="mobile-header__container">
 					<a class="page-nav-logo link" href="./index.html"
 						><span class="first-part-logo">Web</span><span class="second-part-logo">Studio</span></a
 					>
-					<ul class="page-nav-list list">
-						<li class="item"><a class="link" href="./index.html">Studio</a></li>
-						<li class="item"><a class="link current" href="./portfolio.html">Portfolio</a></li>
-						<li class="item"><a class="link" href="./studio.html">Contacts</a></li>
-					</ul>
-				</nav>
+					<button type="button" class="mobile-menu__button mobile-menu__button--open js-open-menu" aria-expanded="false" aria-controls="mobile-menu">
+                        <svg class="mobile-menu__icon" width="32" height="22" aria-label="Mobile menu switcher">
+                            <use class="close-icon" href="./images/icons.svg#icon-menu"></use>
+                        </svg>
+                    </button>
+				</div>
+						
+					<div class="mobile-menu__container js-menu-container" id="mobile-menu">
 
-				<!-- /Nav Section -->
-
-				<!-- Address  -->
-				<address>
-					<ul class="contacts list">
-						<li class="item">
-							<a class="link" href="mailto:info@devstudio.com">info@devstudio.com</a>
-						</li>
-						<li class="item">
-							<a class="link" href="tel:+110001111111">+11 (000) 111-11-11</a>
-						</li>
-					</ul>
-				</address>
+						<button type="button" class="close-btn mobile-menu__button mobile-menu__button--close js-close-menu">
+							<svg class="mobile-menu__icon" width="8" height="8" aria-label="Closing the mobile menu">
+								<use class="icon-close" href="./images/icons.svg#icon-close"></use>
+							</svg>
+						</button>
+	
+						<nav class="mobile-nav">
+							<ul class="mobile-nav__list list">
+								<li class="mobile-nav__item">
+									<a href="./index.html" class="mobile-nav__link mobile-nav__link--current link">Studio</a>
+								</li>
+								
+								<li class="mobile-nav__item">
+									<a href="./portfolio.html" class="mobile-nav__link link">Portfolio</a>
+								</li>
+								
+								<li class="mobile-nav__item">
+									<a href="#" class="mobile-nav__link link">Contacts</a>
+								</li>
+							</ul>
+						</nav>
+	
+						<div class="mobile-menu__contacts">
+							<ul class="mobile-menu__contact-list list">
+								<li class="mobile-menu__contact-item">
+									<a class="mobile-menu__contact-tel link" href="tel:+110001111111">+11 (000) 111-11-11</a>
+								</li>
+								<li class="mobile-menu__contact-item">
+									<a class="mobile-menu__contact-mail link" href="mailto:info@devstudio.com">info@devstudio.com</a>
+								</li>
+								
+							</ul>
+							<ul class="mobile-menu__social-list  list">
+								<li class="mobile-menu__social-item ">
+									<a class="link" href="https://instagram.com"
+										><svg class="icon">
+											<use href="./images/icons.svg#icon-instagram"></use></svg
+									></a>
+								</li>
+								<li class="mobile-menu__social-item ">
+									<a class="link" href="https://twitter.com"
+										><svg class="icon">
+											<use href="./images/icons.svg#icon-twitter"></use></svg
+									></a>
+								</li>
+								<li class="mobile-menu__social-item ">
+									<a class="link" href="https://www.facebook.com/"
+										><svg class="icon">
+											<use href="./images/icons.svg#icon-facebook"></use></svg
+									></a>
+								</li>
+								<li class="mobile-menu__social-item ">
+									<a class="link" href="https://www.linkedin.com/"
+										><svg class="icon">
+											<use href="./images/icons.svg#icon-linkedin"></use></svg
+									></a>
+								</li>
+							</ul>
+						</div>
+					</div>
+				<div class="menu-container">
+					<nav class="page-nav">
+						<ul class="page-nav-list list">
+							<li class="item"><a class="link " href="./index.html">Studio</a></li>
+							<li class="item"><a class="link current" href="./portfolio.html">Portfolio</a></li>
+							<li class="item"><a class="link" href="./studio.html">Contacts</a></li>
+						</ul>
+					</nav>
+	
+					<!-- /Nav Section -->
+	
+					<!-- Address  -->
+					<address>
+						<ul class="contacts list">
+							<li class="contacts-item">
+								<a class="contacts-link link" href="mailto:info@devstudio.com">info@devstudio.com</a>
+							</li>
+							<li class="contacts-item">
+								<a class="contacts-link link" href="tel:+110001111111">+11 (000) 111-11-11</a>
+							</li>
+						</ul>
+					</address>
+				</div>
 			</div>
 			<!-- /Address  -->
 		</header>
 
 		<main>
-			<section class="portfolio section">
+			<section class="section portfolio ">
 				<div class="container">
 					<h1 class="prtfolio-title visually-hidden">Portfolio</h1>
 					<ul class="portfolio-filter list">
-						<li class="item"><button class="button active" type="button" >All</button></li>
-						<li class="item"><button class="button" type="button" >Web Site</button></li>
-						<li class="item"><button class="button" type="button" >App</button></li>
-						<li class="item"><button class="button" type="button" >Design</button></li>
-						<li class="item"><button class="button" type="button" >Marketing</button></li>
+						<li class="item"><button class="portfolio-button active" type="button" data-category="all">All</button></li>
+						<li class="item"><button class="portfolio-button" type="button" data-category="web">Web Site</button></li>
+						<li class="item"><button class="portfolio-button" type="button" data-category="app">App</button></li>
+						<li class="item"><button class="portfolio-button" type="button" data-category="design">Design</button></li>
+						<li class="item"><button class="portfolio-button" type="button" data-category="marketing">Marketing</button></li>
 					</ul>
-					
 
-					<ul class="portfolio-list list">
-						<li class="item">
+					<ul class="portfolio-list list " data-category="all">
+						<li class="item" data-category="app">
 							<a class="link" href="http://" target="_blank" rel="noreferrer noopener">
 								<div class="product-thumb">
-									<img src="./images/portfolio/banking.jpg" alt="banking app interface concept" width="360" />
+									<img
+									srcset="./images/portfolio/banking.jpg 1x, ./images/portfolio/banking-2x.jpg 2x"
+									 src="./images/portfolio/banking.jpg" alt="banking app interface concept" width="360" />
 									<div class="product-overlay">
 										<p class="thumb-description">
 											14 Stylish and User-Friendly App Design Concepts · Task Manager App · Calorie Tracker App · Exotic
@@ -84,10 +160,12 @@
 								</div>
 							</a>
 						</li>
-						<li class="item">
+						<li class="item" data-category="marketing">
 							<a class="link" href="http://" target="_blank" rel="noreferrer noopener">
 								<div class="product-thumb">
-									<img src="./images/portfolio/cashless.jpg" alt="cashless payment" width="360" />
+									<img
+									srcset="./images/portfolio/cashless.jpg 1x, ./images/portfolio/cashless-2x.jpg 2x"
+									src="./images/portfolio/cashless.jpg" alt="cashless payment" width="360" />
 									<div class="product-overlay">
 										<p class="thumb-description">
 											14 Stylish and User-Friendly App Design Concepts · Task Manager App · Calorie Tracker App · Exotic
@@ -101,10 +179,12 @@
 								</div>
 							</a>
 						</li>
-						<li class="item">
+						<li class="item" data-category="app">
 							<a class="link" href="http://" target="_blank" rel="noreferrer noopener">
 								<div class="product-thumb">
-									<img src="./images/portfolio/maditation.jpg" alt="meditaion app" width="360" />
+									<img
+									srcset="./images/portfolio/maditation.jpg 1x, ./images/portfolio/maditation-2x.jpg 2x"
+									src="./images/portfolio/maditation.jpg" alt="meditaion app" width="360" />
 									<div class="product-overlay">
 										<p class="thumb-description">
 											14 Stylish and User-Friendly App Design Concepts · Task Manager App · Calorie Tracker App · Exotic
@@ -119,10 +199,12 @@
 								</div>
 							</a>
 						</li>
-						<li class="item">
+						<li class="item" data-category="marketing">
 							<a class="link" href="http://" target="_blank" rel="noreferrer noopener">
 								<div class="product-thumb">
-									<img src="./images/portfolio/taxi.jpg" alt="taxi service" width="360" />
+									<img
+									srcset="./images/portfolio/taxi.jpg 1x, ./images/portfolio/taxi-2x.jpg 2x"
+									src="./images/portfolio/taxi.jpg" alt="taxi service" width="360" />
 									<div class="product-overlay">
 										<p class="thumb-description">
 											14 Stylish and User-Friendly App Design Concepts · Task Manager App · Calorie Tracker App · Exotic
@@ -137,10 +219,12 @@
 								</div>
 							</a>
 						</li>
-						<li class="item">
+						<li class="item" data-category="design">
 							<a class="link" href="http://" target="_blank" rel="noreferrer noopener">
 								<div class="product-thumb">
-									<img src="./images/portfolio/screen.jpg" alt="screen illustrations" width="360" />
+									<img
+									srcset="./images/portfolio/screen.jpg 1x, ./images/portfolio/screen-2x.jpg 2x"
+									src="./images/portfolio/screen.jpg" alt="screen illustrations" width="360" />
 									<div class="product-overlay">
 										<p class="thumb-description">
 											14 Stylish and User-Friendly App Design Concepts · Task Manager App · Calorie Tracker App · Exotic
@@ -155,10 +239,12 @@
 								</div>
 							</a>
 						</li>
-						<li class="item">
+						<li class="item" data-category="marketing">
 							<a class="link" href="http://" target="_blank" rel="noreferrer noopener">
 								<div class="product-thumb">
-									<img src="./images/portfolio/online.jpg" alt="online courses" width="360" />
+									<img
+									srcset="./images/portfolio/online.jpg 1x, ./images/portfolio/online-2x.jpg 2x"
+									src="./images/portfolio/online.jpg" alt="online courses" width="360" />
 									<div class="product-overlay">
 										<p class="thumb-description">
 											14 Stylish and User-Friendly App Design Concepts · Task Manager App · Calorie Tracker App · Exotic
@@ -173,10 +259,12 @@
 								</div>
 							</a>
 						</li>
-						<li class="item">
+						<li class="item" data-category="design">
 							<a class="link" href="http://" target="_blank" rel="noreferrer noopener">
 								<div class="product-thumb">
-									<img src="./images/portfolio/instagram.jpg" alt="instagram stories concept" width="360" />
+									<img
+									srcset="./images/portfolio/instagram.jpg 1x, ./images/portfolio/instagram-2x.jpg 2x"
+									src="./images/portfolio/instagram.jpg" alt="instagram stories concept" width="360" />
 									<div class="product-overlay">
 										<p class="thumb-description">
 											14 Stylish and User-Friendly App Design Concepts · Task Manager App · Calorie Tracker App · Exotic
@@ -191,10 +279,12 @@
 								</div>
 							</a>
 						</li>
-						<li class="item">
+						<li class="item" data-category="web">
 							<a class="link" href="http://" target="_blank" rel="noreferrer noopener">
 								<div class="product-thumb">
-									<img src="./images/portfolio/organic.jpg" alt="organic food" width="360" />
+									<img
+									srcset="./images/portfolio/organic.jpg 1x, ./images/portfolio/organic-2x.jpg 2x"
+									src="./images/portfolio/organic.jpg" alt="organic food" width="360" />
 									<div class="product-overlay">
 										<p class="thumb-description">
 											14 Stylish and User-Friendly App Design Concepts · Task Manager App · Calorie Tracker App · Exotic
@@ -208,10 +298,12 @@
 								</div>
 							</a>
 						</li>
-						<li class="item">
+						<li class="item" data-category="web">
 							<a class="link" href="http://" target="_blank" rel="noreferrer noopener">
 								<div class="product-thumb">
-									<img src="./images/portfolio/fresh.jpg" alt="fresh coffee" width="360" />
+									<img
+									srcset="./images/portfolio/fresh.jpg 1x, ./images/portfolio/fresh-2x.jpg 2x"
+									src="./images/portfolio/fresh.jpg" alt="fresh coffee" width="360" />
 									<div class="product-overlay">
 										<p class="thumb-description">
 											14 Stylish and User-Friendly App Design Concepts · Task Manager App · Calorie Tracker App · Exotic
@@ -229,58 +321,62 @@
 				</div>
 			</section>
 		</main>
-		
+
 		<!-- Footer -->
-		<footer class="footer">
-			<div class="container">
-				<div class="footer-information">
-					<a class="page-nav-logo link" href="./index.html"
-						><span class="first-part-logo">Web</span> <span class="second-part-logo">Studio</span></a
-					>
-					<p class="information">
-						Increase the flow of customers and sales for your business with digital marketing & growth solutions.
-					</p>
-				</div>
-				<div class="social-block">
-					<h2 class="social-block-title title">Social media</h2>
-					<ul class="social-list list">
-						<li class="item"
-							><a class="link" href="http://instagram.com"
-								><svg class="icon" width="24px" height="24px">
-									<use href="./images/icons.svg#icon-instagram"></use></svg></a
-						></li>
-						<li class="item"
-							><a class="link" href="http://twitter.com"
-								><svg class="icon" width="24px" height="24px">
-									<use href="./images/icons.svg#icon-twitter"></use></svg></a
-						></li>
-						<li class="item"
-							><a class="link" href="http://facebook.com"
-								><svg class="icon" width="24px" height="24px">
-									<use href="./images/icons.svg#icon-facebook"></use></svg></a
-						></li>
-						<li class="item"
-							><a class="link" href="http://linkedin.com"
-								><svg class="icon" width="24px" height="24px">
-									<use href="./images/icons.svg#icon-linkedin"></use></svg></a
-						></li>
-					</ul>
+		<footer class="section footer">
+			<div class="footer-info container ">
+				<div class="tablet-footer">
+					<div class="footer-logo">
+						<a class="footer-nav-logo link" href="./index.html"
+							><span class="first-part-logo">Web </span> <span class="second-part-logo">Studio</span></a
+						>
+						<p class="information">
+							Increase the flow of customers and sales for your business with digital marketing & growth solutions.
+						</p>
+					</div>
+					<div class="social-block">
+						<p class="social-block-title title">Social media</p>
+						<ul class="social-list list">
+							<li class="item"
+								><a class="link" href="http://instagram.com"
+									><svg class="icon" width="24px" height="24px">
+										<use href="./images/icons.svg#icon-instagram"></use></svg></a
+							></li>
+							<li class="item"
+								><a class="link" href="http://twitter.com"
+									><svg class="icon" width="24px" height="24px">
+										<use href="./images/icons.svg#icon-twitter"></use></svg></a
+							></li>
+							<li class="item"
+								><a class="link" href="http://facebook.com"
+									><svg class="icon" width="24px" height="24px">
+										<use href="./images/icons.svg#icon-facebook"></use></svg></a
+							></li>
+							<li class="item"
+								><a class="link" href="http://linkedin.com"
+									><svg class="icon" width="24px" height="24px">
+										<use href="./images/icons.svg#icon-linkedin"></use></svg></a
+							></li>
+						</ul>
+					</div>
 				</div>
 				<div class="input-block">
-					<strong class="call-text">Subscribe
-	
-					</strong>
+					<b class="call-text">Subscribe </b>
 					<form class="footer-form">
-						<input type="text" name="mail" class="footer-input" placeholder="E-mail">
-						<button class="footer-btn" type="submit">Subscribe
+						
+						<input type="email" name="mail" class="footer-input" placeholder="E-mail" aria-label="E-mail" />
+
+						<button class="footer-btn" type="submit"
+							>Subscribe
 							<svg class="btn-icon" width="24" height="24">
 								<use href="./images/icons.svg#icon-send"></use>
-							</svg> </button>
+							</svg>
+						</button>
 					</form>
 				</div>
 			</div>
 		</footer>
+		<script src="./js/filter.js"></script>
 		<!-- /Footer -->
-		
 	</body>
 </html>
